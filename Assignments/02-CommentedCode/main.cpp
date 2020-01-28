@@ -1,8 +1,33 @@
-#include <iostream>
+///////////////////////////////////////////////////////////////////////////////
+//                   
+// Author:           Mika Morgan (but really Terry Griffin)
+// Email:            mmorgan@archercityisd.net
+// Label:            A02
+// Title:            Linked List Class
+// Course:           CMPS 3013
+// Semester:         Spring 2020
+//
+// Description:
+//       This program implements a class that allows a linked list to be used just like 
+//       an array. It overloads the "[]" (square brackets) to simulate accessing seperate 
+//       array elements, but really it traverses the list to find the specified node using
+//       an index value. It also overloads the "+" and "-" signs allowing a user to "add"
+//       or "push" items onto the end of the list, as well as "pop" items off the end of our 
+//       array. This class is not meant to replace the STL vector library, its simply a project
+//       to introduce the beginnings of creating complex / abstract data types. 
+//       
+// Usage: 
+//      - $ ./main filename
+//      - This will read in a file containing whatever values to be read into our list/array. 
+//      
+// Files:            
+//      main.cpp    : driver program 
+/////////////////////////////////////////////////////////////////////////////////#include <iostream>
 
 using namespace std;
 
-int A[100];
+int A[100];                         
+//Create an integer array
 
 struct Node {
     int x;
@@ -47,7 +72,6 @@ public:
         Node *Temp = new Node(val);
 
         // figure out where it goes in the list
-
         Temp->next = Head;
         Head = Temp;
         if (!Tail) {
@@ -75,7 +99,7 @@ public:
     // not implemented
     int Pop() {
         Size--;
-        return 0; //
+        return 0; 
     }
 
     List operator+(const List &Rhs) {
